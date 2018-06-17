@@ -1,0 +1,67 @@
+import { TestFixture, Test, TestCase, Expect } from "alsatian";
+import { Domain } from "./domain";
+
+@TestFixture()
+export class DomainTests {
+
+    @TestCase("*")
+    @TestCase("http://*")
+    @TestCase("http://example.com")
+    @TestCase("http://*.com")
+    @TestCase("http://www.*.com")
+    @TestCase("http://www.example.com")
+    @TestCase("http://example.*")
+    @TestCase("http://www.example.*")
+    @TestCase("http://www.example.com:80")
+    @TestCase("http://*.com:80")
+    @TestCase("http://*.*")
+    @TestCase("http://*.*:80")
+    @TestCase("https://*")
+    @TestCase("https://example.com")
+    @TestCase("https://*.com")
+    @TestCase("https://www.*.com")
+    @TestCase("https://www.example.com")
+    @TestCase("https://an-example.com")
+    @TestCase("https://example.*")
+    @TestCase("https://www.example.*")
+    @TestCase("https://www.example.com:443")
+    @TestCase("https://*.com:443")
+    @TestCase("https://*.*")
+    @TestCase("https://*.*:443")
+    @TestCase("http://192.168.0.1")
+    @TestCase("https://192.168.0.1")
+    @TestCase("http://52.244.48.99")
+    @TestCase("https://52.244.48.99")
+    @TestCase("http://192.168.0.1:3000")
+    @TestCase("https://192.168.0.1:4000")
+    @Test("valid domains")
+    public validDomains(domain: string) {
+        Expect(Domain(domain)).toBe(domain);
+    }
+
+    @TestCase("/*")
+    @TestCase(" ")
+    @TestCase("-")
+    @TestCase("http:/*")
+    @TestCase("htp://*")
+    @TestCase("http://something")
+    @TestCase("https://something")
+    @TestCase("http://192")
+    @TestCase("https://192")
+    @TestCase("http://192.168")
+    @TestCase("https://192.168")
+    @TestCase("http://192.168.0")
+    @TestCase("https://192.168.0")
+    @TestCase("http://something-.com")
+    @TestCase("http://-something.com")
+    @TestCase("http://something.-com")
+    @TestCase("http://something.com-")
+    @TestCase("https://something-.com")
+    @TestCase("https://-something.com")
+    @TestCase("https://something.-com")
+    @TestCase("https://something.com-")
+    @Test("invalid domains")
+    public invalidDomains(domain: string) {
+        Expect(() => Domain(domain)).toThrowError(Error, `${domain} doesn't seem to be a valid domain name.`)
+    }
+}

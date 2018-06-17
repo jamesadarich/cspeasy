@@ -5,7 +5,7 @@ export const StrictDynamic = "'strict-dynamic'";
 export const ReportSample = "'report-sample'";
 export const UnsafeInline = "'unsafe-inline'";
 export const UnsafeEVal = "'unsafe-eval'";
-// SCHEME
-// URIs
-// NONCE
-// HASH
+export { default as Scheme } from "./schemes";
+export { Domain } from "./domain";
+//TODO: NONCE
+//TODO: HASH

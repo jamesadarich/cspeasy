@@ -4,12 +4,39 @@ import * as Policies from "./policies";
 import * as SandboxType from "./sandbox-types";
 import * as PluginType from "./plugin-types";
 
-export { Policies };
+export { 
+    Policies,
+    SandboxType,
+    PluginType
+};
 
-type SandboxTypes = typeof SandboxType.AllowForms;
-type PluginTypes = typeof PluginType.Pdf;
-type PolicyTypes = typeof Policies.Self;
-type SrcValues = typeof Policies.None | typeof Policies.Any | PolicyTypes | Array<PolicyTypes>;
+export type SchemeTypes = typeof Policies.Scheme.Https 
+                        | typeof Policies.Scheme.Http
+                        | typeof Policies.Scheme.Data;
+
+type SandboxTypes = typeof SandboxType.AllowForms
+                  | typeof SandboxType.AllowModals
+                  | typeof SandboxType.AllowOrientationLock
+                  | typeof SandboxType.AllowPointerLock
+                  | typeof SandboxType.AllowPopups
+                  | typeof SandboxType.AllowPopupsToEscapeSandbox
+                  | typeof SandboxType.AllowPresentation
+                  | typeof SandboxType.AllowSameOrigin
+                  | typeof SandboxType.AllowScripts
+                  | typeof SandboxType.AllowTopNavigation;
+
+type PluginTypes = typeof PluginType.Pdf
+                 | typeof PluginType.Flash
+                 | typeof PluginType.Java;
+
+type PolicyTypes = typeof Policies.None
+                 | typeof Policies.Any
+                 |typeof Policies.Self
+                 | SchemeTypes
+                 | string // to be replaced with domain regex when available
+                 ;
+
+type SrcValues = PolicyTypes | Array<PolicyTypes>;
 
 export interface ContentSecurityPolicyInfo {
     defaultSrc?: SrcValues; // default none
@@ -21,13 +48,13 @@ export interface ContentSecurityPolicyInfo {
     objectSrc?: SrcValues; // default empty
     mediaSrc?: SrcValues; // default empty
     frameSrc?: SrcValues; // default empty depreacted should use child-src now
-    sandbox?: Array<SandboxTypes>; // default empty
+    sandbox?: SandboxTypes | Array<SandboxTypes>; // default empty
     reportUri?: string; // default empty
     reportOnly?: boolean; // default empty
     childSrc?: SrcValues; // default empty
     formAction?: SrcValues; // default empty
     frameAncestors?: SrcValues; // default empty
-    pluginTypes?: Array<PluginTypes>; // default empty
+    pluginTypes?: PluginTypes | Array<PluginTypes>; // default empty
 }
 
 export class ContentSecurityPolicy implements ContentSecurityPolicyInfo {

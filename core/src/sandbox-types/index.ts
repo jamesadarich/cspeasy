@@ -1,14 +1,10 @@
-enum SandboxType {
-    AllowForms, // allow-forms
-    AllowScripts, // allow-scripts
-    AllowSameOrigin,
-    AllowPopups,
-    AllowModals,
-    AllowOrientationLock,
-    AllowPointerLock,
-    AllowPresentation,
-    AllowPopupsToEscapeSandbox,
-    AllowTopNavigation
-}
-
 export const AllowForms = "allow-forms";
+export const AllowScripts = "allow-scripts";
+export const AllowSameOrigin = "allow-same-origin";
+export const AllowPopups = "allow-popups";
+export const AllowModals = "allow-modals";
+export const AllowOrientationLock = "allow-orientation-lock";
+export const AllowPointerLock = "allow-pointer-lock";
+export const AllowPresentation = "allow-presentation";
+export const AllowPopupsToEscapeSandbox = "allow-popups-to-escape-sandbox";
+export const AllowTopNavigation = "allow-top-navigation";
