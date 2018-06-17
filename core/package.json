@@ -1,6 +1,6 @@
 {
   "name": "cspeasy",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A simple way to setup Content Security Policy even with inline scripts and styles!",
   "main": "dist/main.js",
   "typings": "dist/main.d.ts",
