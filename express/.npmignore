@@ -1,0 +1,12 @@
+# npm
+node_modules
+
+# typescript
+tsconfig.json
+
+# source
+src
+
+# test
+test
+**/*.spec.js

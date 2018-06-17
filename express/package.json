@@ -7,7 +7,7 @@
   "scripts": {
     "prepublish": "npm test",
     "test": "tsc && alsatian \"./dist/**/*.spec.js\"",
-    "test:vanilla:node": "ts-node test/server"
+    "test:express": "ts-node test/server"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,6 @@
     "typescript": "^2.8.3"
   },
   "dependencies": {
-    "cspeasy": "^0.2.0"
+    "cspeasy": "^0.4.0"
   }
 }

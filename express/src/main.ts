@@ -1,5 +1,6 @@
-import { ContentSecurityPolicyInfo, ContentSecurityPolicy } from "../core/main";
+import { ContentSecurityPolicyInfo, ContentSecurityPolicy } from "cspeasy";
 import { readFile } from "fs";
+import { Request, Response, NextFunction } from "express";
 
 async function readFilePromise(path: string) {
     return new Promise<Buffer>((resolve, reject) => {
@@ -7,18 +8,16 @@ async function readFilePromise(path: string) {
     });
 }
 
-// builds on the fly from pending http responses
-export function createDynamicPolicy(policy: ContentSecurityPolicy) {
-    const policyBuilder = new ContentSecurityPolicyBuilder(policy);
+export async function createContentSecurityPolicy(policy: ContentSecurityPolicyInfo & { documents: Array<string> }) {
+    let csp = new ContentSecurityPolicy(policy);
 
-    return (body) => {
-        return policyBuilder.generateHeaderForHtmlDocument(body);
+    for (let document of policy.documents) {
+        const documentBuffer = await readFilePromise(document);
+        csp = csp.addDocument(documentBuffer.toString());
+    }
+
+    return (request: Request, response: Response, next: NextFunction) => {
+        response.setHeader("Content-Security-Policy", csp.getHeaderValue());
+        next();
     };
-}
-
-// builds from files on disk
-export async function createStaticPolicy(policy: ContentSecurityPolicy) {
-    const body = await readFilePromise("");
-    const policyBuilder = new ContentSecurityPolicyBuilder(policy);
-    return policyBuilder.generateHeaderForHtmlDocument(body.toString());
 }
