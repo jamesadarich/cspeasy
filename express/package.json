@@ -1,6 +1,6 @@
 {
   "name": "cspeasy-express",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A simple way to setup Content Security Policy even with inline scripts and styles on express!",
   "main": "dist/main.js",
   "typings": "dist/main.d.ts",
