@@ -1,7 +1,7 @@
 {
-  "name": "cspeasy",
-  "version": "0.3.0",
-  "description": "A simple way to setup Content Security Policy even with inline scripts and styles!",
+  "name": "cspeasy-express",
+  "version": "0.1.0",
+  "description": "A simple way to setup Content Security Policy even with inline scripts and styles on express!",
   "main": "dist/main.js",
   "typings": "dist/main.d.ts",
   "scripts": {
@@ -18,17 +18,16 @@
   "bugs": {
     "url": "https://github.com/jamesadarich/cspeasy/issues"
   },
-  "homepage": "https://github.com/jamesadarich/cspeasy/blob/master/core/README.md",
+  "homepage": "https://github.com/jamesadarich/cspeasy/blob/master/express/README.md",
   "devDependencies": {
-    "@types/crypto-js": "^3.1.39",
-    "@types/jsdom": "^11.0.4",
+    "@types/express": "^4.16.0",
     "@types/node": "^10.1.2",
     "alsatian": "^2.2.1",
+    "express": "^4.16.3",
     "ts-node": "^6.1.1",
     "typescript": "^2.8.3"
   },
   "dependencies": {
-    "crypto-js": "^3.1.9-1",
-    "jsdom": "^11.11.0"
+    "cspeasy": "^0.2.0"
   }
 }

@@ -14,7 +14,7 @@ export type SchemeTypes = typeof Policies.Scheme.Https
                         | typeof Policies.Scheme.Http
                         | typeof Policies.Scheme.Data;
 
-type SandboxTypes = typeof SandboxType.AllowForms
+export type SandboxTypes = typeof SandboxType.AllowForms
                   | typeof SandboxType.AllowModals
                   | typeof SandboxType.AllowOrientationLock
                   | typeof SandboxType.AllowPointerLock
@@ -25,18 +25,18 @@ type SandboxTypes = typeof SandboxType.AllowForms
                   | typeof SandboxType.AllowScripts
                   | typeof SandboxType.AllowTopNavigation;
 
-type PluginTypes = typeof PluginType.Pdf
+export type PluginTypes = typeof PluginType.Pdf
                  | typeof PluginType.Flash
                  | typeof PluginType.Java;
 
-type PolicyTypes = typeof Policies.None
+export type PolicyTypes = typeof Policies.None
                  | typeof Policies.Any
                  |typeof Policies.Self
                  | SchemeTypes
                  | string // to be replaced with domain regex when available
                  ;
 
-type SrcValues = PolicyTypes | Array<PolicyTypes>;
+export type SrcValues = PolicyTypes | Array<PolicyTypes>;
 
 export interface ContentSecurityPolicyInfo {
     defaultSrc?: SrcValues; // default none
