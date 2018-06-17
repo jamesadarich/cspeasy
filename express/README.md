@@ -6,10 +6,13 @@ It digests HTML documents so you can have a strong CSP with necessary inline scr
 
 ## Example
 
+`npm install cspeasy-express --save`
+
 ```javascript
 import express from "express";
 import { resolve } from "path";
-import { createContentSecurityPolicy } from "../src/main";
+import { Policies } from "cspeasy";
+import { createContentSecurityPolicy } from "cspeasy-express";
 
 const app = express();
 

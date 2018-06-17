@@ -6,11 +6,13 @@ It digests HTML documents so you can have a strong CSP with necessary inline scr
 
 ## Example
 
+`npm install cspeasy --save`
+
 ```javascript
 import { createServer } from "http";
 import { readFile } from "fs";
-import { ContentSecurityPolicy, Policies } from "../src/main";
 import { resolve } from "path";
+import { ContentSecurityPolicy, Policies } from "cspeasy";
 
 const server = createServer((req, res) => {
     const csp = new ContentSecurityPolicy({
