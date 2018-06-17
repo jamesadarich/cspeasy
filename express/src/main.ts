@@ -8,7 +8,16 @@ async function readFilePromise(path: string) {
     });
 }
 
-export async function createContentSecurityPolicy(policy: ContentSecurityPolicyInfo & { documents: Array<string> }) {
+export function createContentSecurityPolicy(policy: ContentSecurityPolicyInfo & { documents: Array<string> }) {
+    let csp = getCsp(policy);
+
+    return async (request: Request, response: Response, next: NextFunction) => {
+        response.setHeader("Content-Security-Policy", (await csp).getHeaderValue());
+        next();
+    };
+}
+
+async function getCsp(policy: ContentSecurityPolicyInfo & { documents: Array<string> }) {
     let csp = new ContentSecurityPolicy(policy);
 
     for (let document of policy.documents) {
@@ -16,8 +25,5 @@ export async function createContentSecurityPolicy(policy: ContentSecurityPolicyI
         csp = csp.addDocument(documentBuffer.toString());
     }
 
-    return (request: Request, response: Response, next: NextFunction) => {
-        response.setHeader("Content-Security-Policy", csp.getHeaderValue());
-        next();
-    };
+    return csp;
 }
