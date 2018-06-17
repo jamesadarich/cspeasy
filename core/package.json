@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/jamesadarich/cspeasy/issues"
   },
-  "homepage": "https://github.com/jamesadarich/cspeasy/core#readme",
+  "homepage": "https://github.com/jamesadarich/cspeasy/blob/master/core/README.md",
   "devDependencies": {
     "@types/crypto-js": "^3.1.39",
     "@types/jsdom": "^11.0.4",
