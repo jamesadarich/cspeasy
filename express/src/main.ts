@@ -2,7 +2,7 @@ import { ContentSecurityPolicyInfo, ContentSecurityPolicy } from "cspeasy";
 import { readFile } from "fs";
 import { Request, Response, NextFunction } from "express";
 
-async function readFilePromise(path: string) {
+async function readFileAsync(path: string) {
     return new Promise<Buffer>((resolve, reject) => {
         readFile(path, (err, data) => err ? reject(err) : resolve(data));
     });
@@ -21,7 +21,7 @@ async function getCsp(policy: ContentSecurityPolicyInfo & { documents: Array<str
     let csp = new ContentSecurityPolicy(policy);
 
     for (let document of policy.documents) {
-        const documentBuffer = await readFilePromise(document);
+        const documentBuffer = await readFileAsync(document);
         csp = csp.addDocument(documentBuffer.toString());
     }
 
