@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cspeasy", "Cspeasy\Cspeasy.csproj", "{F59FA61D-8F34-49D0-B22B-117561D63FD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cspeasy.Test", "Cspeasy.Test\Cspeasy.Test.csproj", "{6CACAA34-59FD-48A0-9D36-29E607818691}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F59FA61D-8F34-49D0-B22B-117561D63FD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F59FA61D-8F34-49D0-B22B-117561D63FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F59FA61D-8F34-49D0-B22B-117561D63FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F59FA61D-8F34-49D0-B22B-117561D63FD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CACAA34-59FD-48A0-9D36-29E607818691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CACAA34-59FD-48A0-9D36-29E607818691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CACAA34-59FD-48A0-9D36-29E607818691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CACAA34-59FD-48A0-9D36-29E607818691}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F720A176-9C47-47DB-9062-4B1B716E5707}
+	EndGlobalSection
+EndGlobal

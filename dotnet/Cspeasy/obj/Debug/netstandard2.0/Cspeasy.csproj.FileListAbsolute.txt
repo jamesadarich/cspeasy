@@ -1,0 +1,9 @@
+C:\code\GitHub\jamesadarich\cspeasy\dotnet\Cspeasy\obj\Debug\netstandard2.0\Cspeasy.csprojResolveAssemblyReference.cache
+C:\code\GitHub\jamesadarich\cspeasy\dotnet\Cspeasy\obj\Debug\netstandard2.0\Cspeasy.csproj.CoreCompileInputs.cache
+C:\code\GitHub\jamesadarich\cspeasy\dotnet\Cspeasy\obj\Debug\netstandard2.0\Cspeasy.AssemblyInfoInputs.cache
+C:\code\GitHub\jamesadarich\cspeasy\dotnet\Cspeasy\obj\Debug\netstandard2.0\Cspeasy.AssemblyInfo.cs
+C:\code\GitHub\jamesadarich\cspeasy\dotnet\Cspeasy\bin\Debug\netstandard2.0\Cspeasy.deps.json
+C:\code\GitHub\jamesadarich\cspeasy\dotnet\Cspeasy\bin\Debug\netstandard2.0\Cspeasy.dll
+C:\code\GitHub\jamesadarich\cspeasy\dotnet\Cspeasy\bin\Debug\netstandard2.0\Cspeasy.pdb
+C:\code\GitHub\jamesadarich\cspeasy\dotnet\Cspeasy\obj\Debug\netstandard2.0\Cspeasy.dll
+C:\code\GitHub\jamesadarich\cspeasy\dotnet\Cspeasy\obj\Debug\netstandard2.0\Cspeasy.pdb
